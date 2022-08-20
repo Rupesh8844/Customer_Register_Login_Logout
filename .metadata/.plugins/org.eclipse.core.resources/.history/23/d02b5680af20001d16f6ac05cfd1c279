@@ -1,0 +1,34 @@
+package com.masai.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.masai.model.CurrentUserSession;
+import com.masai.model.Customer;
+import com.masai.model.CustomerDTO;
+import com.masai.repository.CustomerDao;
+
+public class CustomerLoginServiceImpl implements CustomerLoginService{
+
+	@Autowired
+	private CustomerDao cDao;
+	
+	
+	@Override
+	public CurrentUserSession logIntoAccount(CustomerDTO customerDTO) {
+		
+	Customer customer  = 	cDao.findByMobile(customerDTO.getMobile());
+		
+	if(customer!=null) {
+		
+	}
+		
+		return null;
+	}
+
+	@Override
+	public String logOutFromAccount(String key) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

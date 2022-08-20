@@ -1,0 +1,59 @@
+package com.masai.util;
+
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+import com.masai.exceptions.CustomerException;
+import com.masai.model.CurrentUserSession;
+import com.masai.model.Customer;
+import com.masai.repository.CustomerDao;
+import com.masai.repository.CustomerLoginSessionDAO;
+
+
+
+@Component
+public class GetCurrentLoginUserSessionDetailsImpl implements GetCurrentLoginUserSessionDetailsInerface{
+
+	
+	@Autowired
+	private CustomerLoginSessionDAO sDAO;
+
+	@Autowired
+	private CustomerDao cDAO;
+	
+	
+	@Override
+	public CurrentUserSession getCurrentUserSession(String key) {
+		
+		Optional<CurrentUserSession> opt = sDAO.findByUuid(key);
+		
+		if(!opt.isPresent()) {
+		throw new CustomerException("Unauthorized");
+		}
+		
+		return opt.get();
+		
+	}
+
+	
+	
+	
+	@Override
+	public Integer getCurrentUserSessionId(String key) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	
+	
+	
+
+	@Override
+	public Customer getCurrentCustomer(String key) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}
