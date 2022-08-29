@@ -3,7 +3,7 @@ package com.masai.util;
 import com.masai.model.CurrentUserSession;
 import com.masai.model.Customer;
 
-public interface GetCurrentLoginUserSessionDetailsInerface {
+public interface GetCurrentLoginUserSessionDetailsInterface {
 
 	  public CurrentUserSession getCurrentUserSession(String key);
 		

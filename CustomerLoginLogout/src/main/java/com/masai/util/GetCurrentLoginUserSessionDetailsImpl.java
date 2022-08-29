@@ -14,7 +14,7 @@ import com.masai.repository.CustomerLoginSessionDAO;
 
 
 @Component
-public class GetCurrentLoginUserSessionDetailsImpl implements GetCurrentLoginUserSessionDetailsInerface{
+public class GetCurrentLoginUserSessionDetailsImpl implements GetCurrentLoginUserSessionDetailsInterface{
 
 	
 	@Autowired
